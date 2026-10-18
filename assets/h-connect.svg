@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="64" viewBox="0 0 960 64" role="img" aria-label="Let's connect">
+<title>Let's connect</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B4E61D"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+<style>.f{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif}@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}.d{animation:pulse 2.2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<rect width="960" height="64" rx="16" fill="#1B0E30"/><rect x=".5" y=".5" width="959" height="63" rx="16" fill="none" stroke="#2A1650"/>
+<circle cx="40" cy="32" r="18" fill="#B4E61D"/><text class="f" x="40" y="38" text-anchor="middle" fill="#0E0518" style="font-size:16px;font-weight:800">05</text>
+<circle class="d" cx="40" cy="32" r="23" fill="none" stroke="#B4E61D" stroke-width="2"/>
+<text class="f" x="78" y="40" fill="#FFFFFF" style="font-size:26px;font-weight:700">Let's connect</text>
+<text class="f" x="932" y="38" text-anchor="end" fill="#A78BFA" style="font-size:15px">videos, posts and conversations</text>
+<rect x="0" y="61" width="960" height="3" fill="url(#g)" opacity=".6" clip-path="inset(0 0 0 0 round 0 0 16px 16px)"/>
+</svg>

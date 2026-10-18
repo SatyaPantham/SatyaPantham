@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satya Pantham | Learn with Pantham (LWP)</title>
+<meta name="description" content="Product Engineer at TCS, building AI one token at a time. Creator of Learn with Pantham: AI and Data Engineering.">
+<meta name="theme-color" content="#0B0416">
+<style>
+:root{
+  --bg:#0B0416; --panel:#1B0E30; --panel2:#2A1650; --lime:#B4E61D; --purple:#7C3AED; --lilac:#A78BFA;
+  --text:#FFFFFF; --muted:#CFC8E6; --line:rgba(167,139,250,.22);
+  --font:'Segoe UI','Helvetica Neue',Arial,sans-serif; --mono:'Cascadia Code',Consolas,'SFMono-Regular','Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#net{position:fixed;inset:0;z-index:0;pointer-events:none}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(124,58,237,.22),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%;transition:left .35s ease-out,top .35s ease-out}
+main,header,footer{position:relative;z-index:1}
+.wrap{width:min(1120px,92%);margin:0 auto}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);background:rgba(11,4,22,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav img{height:44px;width:auto;display:block}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px;color:var(--muted)}
+nav ul a{padding:6px 2px;position:relative;transition:color .2s}
+nav ul a:hover{color:var(--lime)}
+.cta-sm{padding:9px 18px;border-radius:999px;background:var(--lime);color:#0B0416;font-weight:700;font-size:14px;transition:transform .2s,box-shadow .2s}
+.cta-sm:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(180,230,29,.35)}
+
+/* hero */
+.hero{min-height:calc(100vh - 68px);display:flex;align-items:center;padding:60px 0}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{color:var(--lime);font-weight:700;letter-spacing:.35em;font-size:14px;text-transform:uppercase}
+h1{font-size:clamp(44px,7vw,84px);line-height:1.02;font-weight:800;margin:14px 0 8px;
+  background:linear-gradient(100deg,#fff 30%,var(--lilac) 70%,var(--lime));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.role{font-size:clamp(18px,2.4vw,24px);color:var(--lilac);font-weight:600}
+.typed{font-family:var(--mono);font-size:clamp(17px,2.2vw,22px);margin-top:22px;min-height:1.7em;color:var(--text)}
+.caret{display:inline-block;width:3px;height:1.1em;background:var(--lime);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{margin-top:18px;color:var(--muted);font-size:18px;max-width:560px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:16px;background:var(--panel);border:1.5px solid var(--purple);font-weight:700;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(124,58,237,.35);border-color:var(--lime)}
+.btn:hover::after{left:120%}
+.btn small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:-2px}
+.dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;flex:none}
+.hero-art{display:flex;justify-content:center}
+.logo-card{position:relative;padding:12px;border-radius:28px;background:#0B0416;border:1px solid var(--line);animation:float 6s ease-in-out infinite;max-width:430px;width:100%}
+.logo-card::before{content:"";position:absolute;inset:-2px;border-radius:30px;padding:2px;background:conic-gradient(from var(--a,0deg),var(--lime),var(--purple),var(--lilac),var(--lime));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;opacity:.9}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.logo-card img{width:100%;display:block;border-radius:20px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;text-align:center}
+.stat b{display:block;font-size:42px;font-weight:800;color:var(--lime);line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+
+/* sections */
+section{padding:96px 0 0}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.num{width:46px;height:46px;border-radius:50%;background:var(--lime);color:#0B0416;display:grid;place-items:center;font-weight:800;position:relative}
+.num::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--lime);animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+h2{font-size:clamp(28px,4vw,40px)}
+.sub{color:var(--lilac);margin-left:auto;font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--lime);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.card .ic{font-size:30px;margin-bottom:10px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+
+.groups{display:grid;gap:22px}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px}
+.group h3{font-size:13px;letter-spacing:.25em;color:var(--lilac);margin-bottom:14px;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:9px 18px 9px 14px;border-radius:999px;background:var(--panel2);border:1.5px solid var(--c,var(--lime));font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:9px;transition:transform .2s,box-shadow .2s}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c,var(--lime))}
+.chip:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 22px rgba(0,0,0,.4)}
+
+.timeline{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.timeline::before{content:"";position:absolute;left:6%;right:6%;top:21px;height:4px;border-radius:2px;background:var(--panel2)}
+.timeline::after{content:"";position:absolute;left:6%;top:21px;height:4px;border-radius:2px;width:0;background:linear-gradient(90deg,var(--lime),var(--purple));transition:width 2.2s ease-out}
+.timeline.in::after{width:88%}
+.step{position:relative;text-align:center;padding-top:0}
+.step i{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--purple);font-style:normal;font-weight:800;margin:0 auto 14px;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
+.step:last-child i{background:var(--lime);color:#0B0416}
+.step em{display:block;font-style:normal;color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.2em}
+.step b{display:block;margin:2px 0}
+.step small{color:var(--muted);font-size:13px;display:block}
+.note{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 24px;color:var(--muted)}
+.note strong{color:var(--text)}
+
+.connect{text-align:center}
+.connect .btns{justify-content:center}
+blockquote{margin:56px auto 0;max-width:820px;padding:30px;border-radius:24px;background:var(--panel);border:2px solid transparent;
+  background-image:linear-gradient(var(--panel),var(--panel)),linear-gradient(100deg,var(--lime),var(--purple));background-origin:border-box;background-clip:padding-box,border-box;
+  font-size:clamp(20px,3vw,30px);font-weight:700;font-style:italic;color:var(--lime);text-align:center}
+blockquote small{display:block;margin-top:10px;font-size:13px;font-style:normal;letter-spacing:.25em;color:var(--lilac);font-weight:600}
+footer{padding:60px 0 40px;text-align:center;color:var(--muted);font-size:14px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}.hero-art{order:-1}.stats{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr);row-gap:30px}.timeline::before,.timeline::after{display:none}
+  nav ul{display:none}.sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" aria-label="Learn with Pantham, home"><img src="assets/logo.png" alt="Learn with Pantham logo"></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#building">Building</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a class="cta-sm" href="https://www.youtube.com/channel/UChrvMmag1aRLoKz9QAOTYcQ" target="_blank" rel="noopener">Watch on YouTube</a>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Hello, I'm</div>
+      <h1>Satya Pantham</h1>
+      <div class="role">Product Engineer @ TCS &nbsp;·&nbsp; Learn with Pantham</div>
+      <div class="typed" aria-live="polite"><span id="typed"></span><span class="caret"></span></div>
+      <p class="lead">I build backend services for core banking by day, and teach AI and Data Engineering on YouTube. Right now I'm building a small language model from scratch, to understand how AI really works.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.youtube.com/channel/UChrvMmag1aRLoKz9QAOTYcQ" target="_blank" rel="noopener"><span class="dot" style="background:var(--lime);color:#0B0416">▶</span><span>YouTube<small>Learn with Pantham</small></span></a>
+        <a class="btn" href="https://www.linkedin.com/in/satya-pantham-767435208/" target="_blank" rel="noopener"><span class="dot" style="background:var(--lilac);color:#0B0416">in</span><span>LinkedIn<small>Satya Pantham</small></span></a>
+        <a class="btn" href="https://www.instagram.com/learn_with_pantham/" target="_blank" rel="noopener"><span class="dot" style="background:var(--purple)">◎</span><span>Instagram<small>@learn_with_pantham</small></span></a>
+      </div>
+    </div>
+    <div class="hero-art"><div class="logo-card"><img src="assets/logo.png" alt="Learn with Pantham LWP logo"></div></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="stats rv">
+      <div class="stat"><b data-count="8">0</b><span>engineers I lead</span></div>
+      <div class="stat"><b data-count="6">0</b><span>sprints in the LLM build plan</span></div>
+      <div class="stat"><b data-count="12">0</b><span>weeks, 19 Oct 2026 to 10 Jan 2027</span></div>
+      <div class="stat"><b data-count="12">0</b><span>planned series episodes</span></div>
+    </div>
+  </div>
+
+  <section id="about"><div class="wrap">
+    <div class="sec-head rv"><div class="num">01</div><h2>About me</h2><span class="sub">who I am and what I build</span></div>
+    <div class="cards">
+      <div class="card rv"><div class="ic">🏦</div><h3>Core banking engineer</h3><p>Product Engineer and Team Lead at TCS. Backend services for Trade Finance and Deposits, SWIFT messaging, batch jobs, and a move from monolith to microservices.</p></div>
+      <div class="card rv"><div class="ic">🎬</div><h3>Teaching AI in public</h3><p>I run Learn with Pantham (LWP), a new YouTube channel on AI and Data Engineering. I learn by building, and I share the real results, failures included.</p></div>
+      <div class="card rv"><div class="ic">🩻</div><h3>Deep learning project</h3><p>A CNN that detects knee osteoarthritis severity from X-rays (TensorFlow, TCS AI Hackathon 2025), reaching 81.2% accuracy with augmentation and learning-rate scheduling.</p></div>
+    </div>
+  </div></section>
+
+  <section id="stack"><div class="wrap">
+    <div class="sec-head rv"><div class="num">02</div><h2>Tech stack and domain</h2><span class="sub">what I work with</span></div>
+    <div class="groups">
+      <div class="group rv"><h3>Backend and banking</h3><div class="chips" style="--c:var(--lime)"><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">Core Banking</span><span class="chip">Trade Finance</span><span class="chip">SWIFT Messaging</span><span class="chip">Deposits</span><span class="chip">Microservices</span></div></div>
+      <div class="group rv"><h3>Engineering tools</h3><div class="chips" style="--c:var(--lilac)"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span></div></div>
+      <div class="group rv"><h3>AI and data (learning in public)</h3><div class="chips" style="--c:var(--purple)"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">LLMs</span><span class="chip">Transformers</span><span class="chip">Data Engineering</span></div></div>
+    </div>
+  </div></section>
+
+  <section id="building"><div class="wrap">
+    <div class="sec-head rv"><div class="num">03</div><h2>Currently building: LWP SQL-GPT 1.0</h2><span class="sub">a small LLM, from scratch</span></div>
+    <div class="timeline rv" id="tl">
+      <div class="step"><i>1</i><em>SPRINT 1</em><b>Setup</b><small>19 Oct – 1 Nov</small><small>tools, repo, first experiment</small></div>
+      <div class="step"><i>2</i><em>SPRINT 2</em><b>Data + tokenizer</b><small>2 – 15 Nov</small><small>clean data, build tokenizer</small></div>
+      <div class="step"><i>3</i><em>SPRINT 3</em><b>Transformer</b><small>16 – 29 Nov</small><small>attention, full model</small></div>
+      <div class="step"><i>4</i><em>SPRINT 4</em><b>Training</b><small>30 Nov – 13 Dec</small><small>from random weights</small></div>
+      <div class="step"><i>5</i><em>SPRINT 5</em><b>SQL + evaluation</b><small>14 – 27 Dec</small><small>generate and test SQL</small></div>
+      <div class="step"><i>6</i><em>SPRINT 6</em><b>Release</b><small>28 Dec – 10 Jan</small><small>demo, docs, final results</small></div>
+    </div>
+    <div class="note rv"><strong>The rules:</strong> random weights and no pretrained model, only real measured results, free tools only, and SQL is the demo task, not the goal. This is the planned schedule; results are shared as each milestone is completed.</div>
+  </div></section>
+
+  <section id="connect"><div class="wrap connect">
+    <div class="sec-head rv" style="justify-content:center"><div class="num">04</div><h2>Let's connect</h2></div>
+    <p class="rv" style="color:var(--muted);margin-bottom:26px">New episode after every milestone. Come and learn with me.</p>
+    <div class="btns rv">
+      <a class="btn" href="https://www.youtube.com/channel/UChrvMmag1aRLoKz9QAOTYcQ" target="_blank" rel="noopener"><span class="dot" style="background:var(--lime);color:#0B0416">▶</span><span>YouTube<small>Learn with Pantham</small></span></a>
+      <a class="btn" href="https://www.linkedin.com/in/satya-pantham-767435208/" target="_blank" rel="noopener"><span class="dot" style="background:var(--lilac);color:#0B0416">in</span><span>LinkedIn<small>Satya Pantham</small></span></a>
+      <a class="btn" href="https://www.instagram.com/learn_with_pantham/" target="_blank" rel="noopener"><span class="dot" style="background:var(--purple)">◎</span><span>Instagram<small>@learn_with_pantham</small></span></a>
+    </div>
+    <blockquote class="rv">“Build to understand. Train to experiment. Test to learn.”<small>LEARN WITH PANTHAM · LWP</small></blockquote>
+  </div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Learn with Pantham (LWP) · Built with HTML, CSS and JavaScript</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* typing effect */
+  var phrases = ['Building an LLM from scratch','Teaching AI and Data Engineering','Product Engineer in banking tech','Build to understand. Test to learn.'];
+  var el = document.getElementById('typed'), pi = 0, ci = 0, del = false;
+  function tick(){
+    var p = phrases[pi];
+    if(reduce){ el.textContent = p; return; }
+    el.textContent = p.slice(0, ci);
+    var wait = del ? 28 : 62;
+    if(!del && ci === p.length){ wait = 1700; del = true; }
+    else if(del && ci === 0){ del = false; pi = (pi + 1) % phrases.length; wait = 350; }
+    else ci += del ? -1 : 1;
+    setTimeout(tick, wait);
+  }
+  tick();
+
+  /* reveal on scroll + counters + timeline */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(count);
+      io.unobserve(e.target);
+    });
+  }, {threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(n,i){ n.style.transitionDelay = (i % 3) * 90 + 'ms'; io.observe(n); });
+  function count(n){
+    var to = +n.dataset.count, t0 = null;
+    if(reduce){ n.textContent = to; return; }
+    function f(ts){ if(!t0) t0 = ts; var k = Math.min((ts - t0) / 1200, 1); n.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if(k < 1) requestAnimationFrame(f); }
+    requestAnimationFrame(f);
+  }
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* cursor glow */
+  var glow = document.getElementById('glow');
+  window.addEventListener('pointermove', function(e){ glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, {passive:true});
+
+  /* neural-network background */
+  var cv = document.getElementById('net'), cx = cv.getContext('2d'), W, H, pts = [], mouse = {x:-999, y:-999};
+  function size(){
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.width = innerWidth * d; H = cv.height = innerHeight * d; cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px';
+    var n = Math.round(Math.min(90, innerWidth * innerHeight / 18000));
+    pts = []; for(var i = 0; i < n; i++) pts.push({x:Math.random() * W, y:Math.random() * H, vx:(Math.random() - .5) * .35 * d, vy:(Math.random() - .5) * .35 * d, c:i % 3, d:d});
+  }
+  var cols = ['180,230,29','124,58,237','167,139,250'];
+  function draw(){
+    cx.clearRect(0, 0, W, H);
+    var d = pts.length ? pts[0].d : 1, link = 150 * d;
+    for(var i = 0; i < pts.length; i++){
+      var p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0 || p.x > W) p.vx *= -1;
+      if(p.y < 0 || p.y > H) p.vy *= -1;
+      var mx = p.x - mouse.x * d, my = p.y - mouse.y * d, md = Math.sqrt(mx * mx + my * my);
+      if(md < 120 * d){ p.x += mx / md * .6; p.y += my / md * .6; }
+      for(var j = i + 1; j < pts.length; j++){
+        var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, dist = Math.sqrt(dx * dx + dy * dy);
+        if(dist < link){ cx.strokeStyle = 'rgba(' + cols[p.c] + ',' + (0.22 * (1 - dist / link)) + ')'; cx.lineWidth = d; cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(q.x, q.y); cx.stroke(); }
+      }
+      cx.fillStyle = 'rgba(' + cols[p.c] + ',.7)'; cx.beginPath(); cx.arc(p.x, p.y, 2 * d, 0, 6.2832); cx.fill();
+    }
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', size);
+  window.addEventListener('pointermove', function(e){ mouse.x = e.clientX; mouse.y = e.clientY; }, {passive:true});
+  size(); draw();
+})();
+</script>
+</body>
+</html>
